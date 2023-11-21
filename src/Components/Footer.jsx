@@ -1,10 +1,11 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export default function Footer() {
+export default function Footer({ profile }) {
   const nav = useNavigate();
   const location = useLocation();
   const navigateToProfile = () => {
-    nav(`/profile`);
+    nav(`/profile`, { state: profile });
   };
 
   const renderHome = () => {
@@ -48,3 +49,7 @@ export default function Footer() {
     </footer>
   );
 }
+
+Footer.propTypes = {
+  profile: PropTypes.object,
+};

@@ -6,15 +6,11 @@ export default function SingleMeditation() {
 
   return (
     <div className="meditation">
-      <h2 className="meditation-header">{meditation.title}</h2>
+      <h2 className="meditation-header">{meditation.name}</h2>
       <ul className="med-list">
-        <li>{meditation.description}</li>
-        <li>{meditation.duration}</li>
-        <li>
-          <audio controls preload="auto">
-            <source src="/groundingMeditation.wav" type="audio/wav" />
-          </audio>
-        </li>
+        <li>{meditation.duration_ms}</li>
+        <li>{meditation.artist.name}</li>
+        <li></li>
       </ul>
     </div>
   );
