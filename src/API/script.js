@@ -1,7 +1,8 @@
 const clientId = "30f051c5fe2146e5afeb4153911bdb99";
 const redirectUri = "http://localhost:5173/home";
 const url = "https://accounts.spotify.com/api/token";
-const scope = "user-read-private user-read-email";
+const scope =
+  "user-read-playback-state user-modify-playback-state streaming user-read-private user-read-email";
 const authUrl = new URL("https://accounts.spotify.com/authorize");
 
 const generateRandomString = (length) => {
@@ -70,6 +71,7 @@ export const getToken = async () => {
 
     localStorage.setItem("access_token", response.access_token);
     localStorage.setItem("refresh_token", response.refresh_token);
+
     console.log(response);
   } catch (error) {
     console.error("Error Fetching Token", error);
@@ -117,3 +119,32 @@ export async function fetchPlaylistTracks() {
     throw error;
   }
 }
+const refreshTokenThreshold = 3600;
+
+const getRefreshToken = async () => {
+  const refreshToken = localStorage.getItem("refresh_token");
+
+  const payload = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      grant_type: "refresh_token",
+      refresh_token: refreshToken,
+      client_id: clientId,
+      cache: "no-cache",
+    }),
+  };
+  try {
+    const body = await fetch(url, payload);
+    const response = await body.json();
+
+    localStorage.setItem("access_token", response.accessToken);
+    localStorage.setItem("refresh_token", response.refreshToken);
+  } catch (error) {
+    console.error("Error Refreshing Token", error);
+  }
+};
+
+setTimeout(getRefreshToken, refreshTokenThreshold * 1000);

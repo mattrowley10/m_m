@@ -17,6 +17,8 @@ export default function Home({ profile }) {
     fetchToken();
   }, []);
 
+  const lastMed = JSON.parse(localStorage.getItem("lastMed"));
+
   return (
     <div className="home">
       <div className="home-h">
@@ -30,25 +32,28 @@ export default function Home({ profile }) {
         )}
       </div>
       <div className="lastMed">
-        <ul className="lastMedList">
-          <li>
-            <h3 className="lastMedHeader">
-              <strong>Last Meditation</strong>
-            </h3>
-          </li>
-          <li>
-            <p>Date</p>
-          </li>
-          <li>
-            <p>Title</p>
-          </li>
-          <li>
-            <p>Duration</p>
-          </li>
-          <li>
-            <p>Rating</p>
-          </li>
-        </ul>
+        {lastMed ? (
+          <ul className="lastMedList">
+            <li>
+              <h3 className="lastMedHeader">
+                <strong>Last Meditation</strong>
+              </h3>
+            </li>
+            <li>
+              <p>{lastMed.date}</p>
+            </li>
+            <li>
+              <p>{lastMed.title}</p>
+            </li>
+            <li>
+              <p>{lastMed.duration}</p>
+            </li>
+          </ul>
+        ) : (
+          <p className="lastMedList">
+            You Have Not Completed Any Meditations Yet!
+          </p>
+        )}
       </div>
       <Footer profile={profile} />
     </div>

@@ -9,14 +9,14 @@ export default function LaunchPage() {
       <button className="launch-button" onClick={() => nav("/login")}>
         Login
       </button>
-      <button
+      {/* <button
         className="launch-button"
         onClick={() => {
           nav("/register");
         }}
       >
         Register
-      </button>
+      </button> */}
     </div>
   );
 }

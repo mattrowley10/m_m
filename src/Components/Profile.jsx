@@ -17,9 +17,6 @@ export default function Profile({ profile }) {
           <li>
             <p className="info">Email: {profile.email} </p>
           </li>
-          <li>
-            <p className="info">Id: {profile.id} </p>
-          </li>
         </ul>
       </div>
       <Footer />

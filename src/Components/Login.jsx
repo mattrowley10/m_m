@@ -9,7 +9,8 @@ export default function Login() {
   return (
     <div className="login">
       <h2 className="login-header">Login</h2>
-      <form onSubmit={handleLogin}>
+
+      <form onSubmit={handleLogin} className="login-form">
         <div className="login-input">Login With Spotify</div>
         <button className="login-button">Submit</button>
       </form>

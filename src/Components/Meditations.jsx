@@ -20,7 +20,6 @@ export default function Meditations() {
     loadMeditationTracks();
   }, []);
 
-  console.log(meditationTracks);
   function formatDuration(minutes) {
     const totalSeconds = Math.round((minutes % 1) * 60);
     return `${Math.floor(minutes)}:${
@@ -31,16 +30,16 @@ export default function Meditations() {
   return (
     <div className="meditations">
       <h2 className="meditations-header">Meditations</h2>
-      <div className="meditations-div">
-        <div>
+      <div className="meditations-div-1">
+        <div className="meditations-div-2">
           {meditationTracks.map((trackData, index) => {
             const { artists, name, duration_ms } = trackData.track;
             const durationInMinutes = duration_ms / 60000;
             const formattedDuration = formatDuration(durationInMinutes);
             return (
-              <div className="meditation-list" key={index}>
+              <div key={index}>
                 <ul
-                  className="med-list"
+                  className="meditation-list"
                   onClick={() =>
                     nav("/single_meditation", { state: trackData.track })
                   }

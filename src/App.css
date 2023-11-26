@@ -23,7 +23,6 @@ app, html{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     background-image: url("https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928_1280.jpg");
     background-size: cover;
     background-position: center;
@@ -64,22 +63,35 @@ app, html{
 .login-header{
     margin: 1rem 0;
 }
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14rem;
+}
 .login-input{
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 10rem;
-    left: .5rem;
 }
 .login-button{
     display: flex;
-    position: relative;
-    top: 12rem;
-    left: 3.5rem;
-    background-color: #011638;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem ;
+    background-color: #36709f;
     padding: 8px;
     color: #F5F0F6;
     cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 2px;
+    opacity: .8;
+    
+}
+.login-button:hover{
+    opacity: 1;
+    transition: .2s ease;
 }
 .register{
     display: flex;
@@ -142,15 +154,17 @@ app, html{
     border: 5px solid #385F71;
     background-color: #FBFEF9;
     background: rgba(238, 244, 244, 0.5);
-    border-radius: 20%;
+    /* border-radius: 10%; */
+    
     color: #000004;
     list-style: none;
-    padding: 4rem;
+    padding: 5rem;
 
 }
 
 .lastMedHeader{
     margin-bottom: 1rem;
+    text-align: center;
 }
 .welcome-home{
     display: flex;
@@ -165,7 +179,7 @@ app, html{
     display: flex;
 }
 .footer-div{
-    background: rgba(238, 244, 244, 0.5);
+    background: rgba(238, 244, 244, 0.85);
     border: 2px solid #385F71;
     width: 100vw;
 }
@@ -177,14 +191,6 @@ app, html{
     color: #000004;
     cursor: pointer;
     padding-top: 5px;
-}
-.meditations{
-    color: #000004;
-    font-family: 'Quicksand';
-}
-.meditations-header{
-    text-align: center;
-    margin-top: 1rem;
 }
 .profile{
     color: #000004;
@@ -199,43 +205,57 @@ app, html{
     flex-direction: column;
     align-items: center;
     position: relative;
-    top: 5rem;
+    top: 8rem;
 }
 .user-info-list{
     background: rgba(238, 244, 244, 0.5);
     border: 5px solid #385F71;
     list-style: none;
     padding: 4rem;
-    border-radius: 25%;
+    /* border-radius: 25%; */
+    text-align: center;
 }
-.meditations-div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
+.meditations{
+    color: #000004;
+    font-family: 'Quicksand';
+}
+.meditations-header{
+    text-align: center;
     margin-top: 1rem;
+}
+.meditations-div-1{
+    margin-top: 1rem;
+}
+.meditations-div-2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 .meditation-list{
     list-style: none;
-    margin-bottom: 1rem;
+    margin: 1rem 1rem 0 1rem;
     text-align: center;
-    background: rgba(238, 244, 244, 0.5);
-    border: 5px solid #385F71;
-    border-radius: 35%;
-    padding: 2rem;
+    background: rgba(238, 244, 244, 0.75);
+    border: 2px solid #385F71;
+    /* border-radius: 35%;  */
+    padding: 1rem;
     cursor: pointer;
+    min-height: 90%;
+    
 }
 .meditation{
     font-family: 'Quicksand';
+    
 }
 .meditation-header{
     text-align: center;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 .med-list{
     text-align: center;
-    list-style: none;
+    list-style: none;   
 }
+
 .community{
     font-family: 'Quicksand';
     display: flex;
@@ -265,4 +285,22 @@ app, html{
     border-radius: 2%;
     padding: 1rem 10rem 1rem 10rem;
     min-height: 36.5rem;
+}
+.spotify-player{
+    position: relative;
+    opacity: .75;
+}
+@media (max-width: 565px){
+    .meditations-div-2{
+        display: block;
+    }
+    .meditations-div-1{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .meditation-list{
+        margin: 1rem;
+    }
 }
