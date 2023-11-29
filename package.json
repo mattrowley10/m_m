@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "http://mattrowley10.github.io/mystic_meditation",
   "scripts": {
     "preDeploy": "npm run build",
     "deploy": "gh-pages -d dist",
