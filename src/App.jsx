@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 // import LaunchPage from "./Components/LaunchPage";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
@@ -25,18 +25,16 @@ function App() {
     fetchUserData();
   }, []);
   return (
-    <Router>
-      <Routes>
-        {/* <Route path="/" element={<LaunchPage />} /> */}
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/home" element={<Home profile={profile} />} />
-        <Route path="/meditations" element={<Meditations />} />
-        <Route path="/single_meditation" element={<SingleMeditation />} />
-        <Route path="/profile" element={<Profile profile={profile} />} />
-        <Route path="/community" element={<Community />} />
-      </Routes>
-    </Router>
+    <Routes>
+      {/* <Route path="/" element={<LaunchPage />} /> */}
+      <Route path="/" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/home" element={<Home profile={profile} />} />
+      <Route path="/meditations" element={<Meditations />} />
+      <Route path="/single_meditation" element={<SingleMeditation />} />
+      <Route path="/profile" element={<Profile profile={profile} />} />
+      <Route path="/community" element={<Community />} />
+    </Routes>
   );
 }
 
