@@ -41,7 +41,7 @@ export default function Footer({ profile }) {
           {/* <li className="footer-item">
             <a onClick={() => nav("/community")}>Community</a>
           </li> */}
-          <li>
+          <li className="footer-item">
             <a onClick={handleLogout}>Logout</a>
           </li>
         </ul>

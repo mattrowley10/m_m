@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Roboto+Slab:wght@200&family=Shadows+Into+Light&family=Slabo+27px&display=swap');
-/*/ image "https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg" /*/
-/*/ image nature "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg" /*/
+
 *{
     margin: 0;
     padding: 0;
@@ -139,6 +138,16 @@ app, html{
     justify-content: center;
     
 }
+.home-desc{
+    display: flex;
+    justify-content: center;
+    margin: 10rem 20rem 0 20rem;
+    opacity: .85;
+    padding: 3rem;
+    border-radius: 50%;
+    color: #000004;
+    background-color:#F8ECDC ;
+}
 .home-header{
     padding: 1rem;
     color: #000004;
@@ -152,14 +161,15 @@ app, html{
 }
 .lastMedList{
     border: 5px solid #385F71;
-    background-color: #FBFEF9;
-    background: rgba(238, 244, 244, 0.5);
-    /* border-radius: 10%; */
-    
+    background-color: #F8ECDC;
+    opacity: .85;
     color: #000004;
     list-style: none;
     padding: 5rem;
-
+    text-align: center;
+}
+.lastMedList:hover{
+    opacity: 1;
 }
 
 .lastMedHeader{
@@ -177,6 +187,7 @@ app, html{
     position: absolute;
     bottom: 0;
     display: flex;
+
 }
 .footer-div{
     background: rgba(238, 244, 244, 0.85);
@@ -189,8 +200,10 @@ app, html{
     justify-content: space-around;
     list-style-type: none;
     color: #000004;
-    cursor: pointer;
     padding-top: 5px;
+}
+.footer-item{
+    cursor: pointer;
 }
 .profile{
     color: #000004;
@@ -208,12 +221,16 @@ app, html{
     top: 8rem;
 }
 .user-info-list{
-    background: rgba(238, 244, 244, 0.5);
+    background-color: #F8ECDC;
+    opacity: .85;
     border: 5px solid #385F71;
     list-style: none;
     padding: 4rem;
     /* border-radius: 25%; */
     text-align: center;
+}
+.user-info-list:hover{
+    opacity: 1;
 }
 .meditations{
     color: #000004;
@@ -234,13 +251,16 @@ app, html{
     list-style: none;
     margin: 1rem 1rem 0 1rem;
     text-align: center;
-    background: rgba(238, 244, 244, 0.75);
+    background-color: #ebe6df;
+    opacity: .85;
     border: 2px solid #385F71;
-    /* border-radius: 35%;  */
     padding: 1rem;
     cursor: pointer;
     min-height: 90%;
     
+}
+.meditation-list:hover{
+    opacity: 1;
 }
 .meditation{
     font-family: 'Quicksand';
@@ -251,12 +271,47 @@ app, html{
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+.page-buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.page-button{
+    padding: 4px;
+    margin-right: 10px;
+    background-color: #385F71;
+    color: #F5F0F6;
+    font-family: "Quicksand";
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow:2px 1px 1px 2px#011638;
+    opacity: .8;
+}
+.page-button:hover{
+    opacity: 1;
+}
 .med-list{
     text-align: center;
     list-style: none;   
 }
+.finish-button{
+    padding: 5px;
+    margin-top: 1rem;
+    background-color: #385F71;
+    color: #F5F0F6;
+    cursor: pointer;
+    font-family: "Quicksand";
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow:2px 1px 1px 2px#011638;
+    opacity: .8;
+}
+.finish-button:hover{
+    opacity: 1;
+}
 
-.community{
+/* .community{
     font-family: 'Quicksand';
     display: flex;
     justify-content: space-between;
@@ -285,7 +340,7 @@ app, html{
     border-radius: 2%;
     padding: 1rem 10rem 1rem 10rem;
     min-height: 36.5rem;
-}
+} */
 .spotify-player{
     position: relative;
     opacity: .75;

@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function Meditations() {
   const [meditationTracks, setMeditationTracks] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [meditationsPerPage] = useState(10);
   const nav = useNavigate();
 
   useEffect(() => {
@@ -27,12 +29,27 @@ export default function Meditations() {
     }${totalSeconds}`;
   }
 
+  const indexOfLastMed = currentPage * meditationsPerPage;
+  const indexOfFirstMed = indexOfLastMed - meditationsPerPage;
+  const currentMeditation = meditationTracks.slice(
+    indexOfFirstMed,
+    indexOfLastMed
+  );
+
+  const nextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const prevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
+
   return (
     <div className="meditations">
       <h2 className="meditations-header">Meditations</h2>
       <div className="meditations-div-1">
         <div className="meditations-div-2">
-          {meditationTracks.map((trackData, index) => {
+          {currentMeditation.map((trackData, index) => {
             const { artists, name, duration_ms } = trackData.track;
             const durationInMinutes = duration_ms / 60000;
             const formattedDuration = formatDuration(durationInMinutes);
@@ -55,6 +72,22 @@ export default function Meditations() {
             );
           })}
         </div>
+      </div>
+      <div className="page-buttons">
+        <button
+          onClick={prevPage}
+          disabled={currentPage === 1}
+          className="page-button"
+        >
+          Previous
+        </button>
+        <button
+          onClick={nextPage}
+          disabled={currentMeditation.length < meditationsPerPage}
+          className="page-button"
+        >
+          Next
+        </button>
       </div>
       <Footer />
     </div>

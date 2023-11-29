@@ -45,16 +45,20 @@ export default function Home({ profile }) {
             <li>
               <p>{lastMed.title}</p>
             </li>
+            <br></br>
             <li>
-              <p>{lastMed.duration}</p>
+              <p>Click On the Meditations Tab to Explore New Meditations!</p>
             </li>
           </ul>
         ) : (
           <p className="lastMedList">
             You Have Not Completed Any Meditations Yet!
+            <br></br>
+            Click On the Meditations Tab to Explore New Meditations!
           </p>
         )}
       </div>
+
       <Footer profile={profile} />
     </div>
   );

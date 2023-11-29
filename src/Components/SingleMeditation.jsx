@@ -58,7 +58,9 @@ export default function SingleMeditation() {
             }}
           ></SpotifyWebPlayer>
         </div>
-        <button onClick={handleFinishMeditation}>Finish Meditation</button>
+        <button onClick={handleFinishMeditation} className="finish-button">
+          Finish Meditation
+        </button>
       </ul>
     </div>
   );
