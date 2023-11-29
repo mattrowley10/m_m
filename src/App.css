@@ -235,6 +235,7 @@ app, html{
 .meditations{
     color: #000004;
     font-family: 'Quicksand';
+    
 }
 .meditations-header{
     text-align: center;
@@ -242,10 +243,12 @@ app, html{
 }
 .meditations-div-1{
     margin-top: 1rem;
+    
 }
 .meditations-div-2{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    
 }
 .meditation-list{
     list-style: none;

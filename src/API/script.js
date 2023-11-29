@@ -26,13 +26,14 @@ const base64encode = (input) => {
     .replace(/\+/g, "-")
     .replace(/\//g, "_");
 };
-
-const hashed = await sha256(codeVerifier);
-const codeChallenge = base64encode(hashed);
-
+const generateCodeChallenge = async () => {
+  const hashed = await sha256(codeVerifier);
+  const codeChallenge = base64encode(hashed);
+  return codeChallenge;
+};
 export const getCode = async () => {
   window.localStorage.setItem("code_verifier", codeVerifier);
-
+  const codeChallenge = await generateCodeChallenge();
   const params = {
     response_type: "code",
     client_id: clientId,
@@ -78,11 +79,16 @@ export const getToken = async () => {
     throw error;
   }
 };
-
-if (code) {
-  await getToken();
-}
-
+const fetchToken = async () => {
+  if (code) {
+    try {
+      await getToken();
+    } catch (error) {
+      console.error("Error Fetching Token");
+    }
+  }
+};
+fetchToken();
 export async function fetchProfile() {
   const accessToken = localStorage.getItem("access_token");
   try {
