@@ -192,6 +192,7 @@ app, html{
 .footer-div{
     background: rgba(238, 244, 244, 0.85);
     border: 2px solid #385F71;
+    
     width: 100vw;
 }
 .footer-list{
@@ -243,7 +244,6 @@ app, html{
 }
 .meditations-div-1{
     margin-top: 1rem;
-    
 }
 .meditations-div-2{
     display: grid;
@@ -277,7 +277,8 @@ app, html{
 .page-buttons{
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: .5rem;
+    margin-bottom: 2rem;
 }
 .page-button{
     padding: 4px;

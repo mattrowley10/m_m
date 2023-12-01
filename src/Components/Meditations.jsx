@@ -3,7 +3,8 @@ import { fetchPlaylistTracks } from "../API/script";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { MdArrowForwardIos } from "react-icons/md";
+import { MdArrowBackIosNew } from "react-icons/md";
 export default function Meditations() {
   const [meditationTracks, setMeditationTracks] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -79,14 +80,14 @@ export default function Meditations() {
           disabled={currentPage === 1}
           className="page-button"
         >
-          Previous
+          <MdArrowBackIosNew />
         </button>
         <button
           onClick={nextPage}
           disabled={currentMeditation.length < meditationsPerPage}
           className="page-button"
         >
-          Next
+          <MdArrowForwardIos />
         </button>
       </div>
       <Footer />
