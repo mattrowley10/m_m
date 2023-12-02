@@ -1,8 +1,8 @@
 const clientId = "30f051c5fe2146e5afeb4153911bdb99";
-const redirectUri =
-  // "http://localhost:5173/home" ||
+const redirectUri = "http://localhost:5173/home";
+const url =
+  "https://accounts.spotify.com/api/token" ||
   "https://ornate-meerkat-7bb6c1.netlify.app/home";
-const url = "https://accounts.spotify.com/api/token";
 const scope =
   "user-read-playback-state user-modify-playback-state streaming user-read-private user-read-email";
 const authUrl = new URL("https://accounts.spotify.com/authorize");
@@ -76,6 +76,8 @@ export const getToken = async () => {
     localStorage.setItem("refresh_token", response.refresh_token);
 
     console.log(response);
+
+    window.location.href = "/home";
   } catch (error) {
     console.error("Error Fetching Token", error);
     throw error;
