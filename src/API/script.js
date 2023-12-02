@@ -1,6 +1,6 @@
 const clientId = "30f051c5fe2146e5afeb4153911bdb99";
 const redirectUri =
-  // "http://localhost:5173/home" ||
+  "http://localhost:5173/home" ||
   "https://ornate-meerkat-7bb6c1.netlify.app/home";
 const url = "https://accounts.spotify.com/api/token";
 const scope =
