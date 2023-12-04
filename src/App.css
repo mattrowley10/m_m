@@ -259,8 +259,8 @@ app, html{
     border: 2px solid #385F71;
     padding: 1rem;
     cursor: pointer;
-    min-height: 90%;
-    
+    /* min-height: 90%; */
+    height: 8rem;
 }
 .meditation-list:hover{
     opacity: 1;
