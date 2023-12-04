@@ -17,8 +17,6 @@ export default function Home({ profile }) {
     fetchToken();
   }, []);
 
-  const lastMed = JSON.parse(localStorage.getItem("lastMed"));
-
   return (
     <div className="home">
       <div className="home-h">
@@ -31,34 +29,24 @@ export default function Home({ profile }) {
           <div>Welcome!</div>
         )}
       </div>
-      <div className="lastMed">
-        {lastMed ? (
-          <ul className="lastMedList">
-            <li>
-              <h3 className="lastMedHeader">
-                <strong>Last Meditation</strong>
-              </h3>
-            </li>
-            <li>
-              <p>{lastMed.date}</p>
-            </li>
-            <li>
-              <p>{lastMed.title}</p>
-            </li>
-            <br></br>
-            <li>
-              <p>Click On the Meditations Tab to Explore New Meditations!</p>
-            </li>
-          </ul>
-        ) : (
-          <p className="lastMedList">
-            You Have Not Completed Any Meditations Yet!
-            <br></br>
-            Click On the Meditations Tab to Explore New Meditations!
-          </p>
-        )}
+      <div className="home-desc">
+        <p className="home-description">
+          Meditation -- an ancient practice developed by our ancestors and their
+          ancestors before them which teaches us how to stay present and mindful
+          in our day to day.
+          <br></br>
+          In our society today, there are distractions galore, keeping us from
+          focusing on what is going on in the moment. The practice of meditation
+          can help us to calm some of those distractions, enhancing focus while
+          relieving stress and anxiety.
+          <br></br>
+          This is an app for those beginning their meditation journey. Through
+          the guided meditations here, you can begin to see some of the benefits
+          of meditation in your waking and sleeping hours. Challenge yourself,
+          embrace a new reality and delve into the world of meditation which
+          awaits you here.
+        </p>
       </div>
-
       <Footer profile={profile} />
     </div>
   );

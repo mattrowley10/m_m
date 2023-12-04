@@ -2,6 +2,8 @@ import Footer from "./Footer";
 import PropTypes from "prop-types";
 
 export default function Profile({ profile }) {
+  const lastMed = JSON.parse(localStorage.getItem("lastMed"));
+
   return (
     <div className="profile">
       <h2 className="profile-header">Profile</h2>
@@ -18,6 +20,33 @@ export default function Profile({ profile }) {
             <p className="info">Email: {profile.email} </p>
           </li>
         </ul>
+      </div>
+      <div className="lastMed">
+        {lastMed ? (
+          <ul className="lastMedList">
+            <li>
+              <h3 className="lastMedHeader">
+                <strong>Last Meditation</strong>
+              </h3>
+            </li>
+            <li>
+              <p>{lastMed.date}</p>
+            </li>
+            <li>
+              <p>{lastMed.title}</p>
+            </li>
+            <br></br>
+            <li>
+              <p>Click On the Meditations Tab to Explore New Meditations!</p>
+            </li>
+          </ul>
+        ) : (
+          <p className="lastMedList">
+            You Have Not Completed Any Meditations Yet!
+            <br></br>
+            Click On the Meditations Tab to Explore New Meditations!
+          </p>
+        )}
       </div>
       <Footer />
     </div>
