@@ -138,16 +138,16 @@ app, html{
     justify-content: center;
     
 }
+.home-header{
+    padding: 1rem;
+    color: #000004;
+    border-radius: 50%;
+}
 .home-desc{
     display: flex;
     justify-content: center;
     position: relative;
     top: 5rem;
-}
-.home-header{
-    padding: 1rem;
-    color: #000004;
-    border-radius: 50%;
 }
 .home-description{
     border: 5px solid #385F71;
@@ -156,10 +156,9 @@ app, html{
     color: #000004;
     list-style: none;
     padding: 5rem;
-    /* text-align: center; */
     word-spacing: 2px;
     line-height: 32px;
-    max-width: 50%;
+    margin: 0 10rem 0 10rem;
 }
 .home-description:hover{
     opacity: 1;
@@ -360,6 +359,11 @@ app, html{
     position: relative;
     opacity: .75;
 }
+@media (max-width: 915px){
+    .home-description{
+        margin: 0;
+    }
+}
 @media (max-width: 565px){
     .meditations-div-2{
         display: block;
@@ -372,5 +376,10 @@ app, html{
     }
     .meditation-list{
         margin: 1rem;
+    }
+}
+@media (max-width: 320px){
+    .home-description{
+        padding: 2rem;
     }
 }
