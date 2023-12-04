@@ -16,11 +16,8 @@ function App() {
 
   useEffect(() => {
     const fetchUserData = async () => {
-      let accessToken = localStorage.getItem("access_token");
-      if (accessToken) {
-        const profile = await fetchProfile();
-        setProfile(profile);
-      }
+      const profile = await fetchProfile();
+      setProfile(profile);
     };
     fetchUserData();
   }, []);
