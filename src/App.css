@@ -178,6 +178,7 @@ app, html{
     list-style: none;
     padding: 3rem;
     text-align: center;
+
 }
 .lastMedList:hover{
     opacity: 1;
@@ -203,7 +204,6 @@ app, html{
 .footer-div{
     background: rgba(238, 244, 244, 0.85);
     border: 2px solid #385F71;
-    
     width: 100vw;
 }
 .footer-list{
