@@ -13,9 +13,12 @@ export default function Meditations() {
 
   useEffect(() => {
     async function loadMeditationTracks() {
+      const accessToken = localStorage.getItem("access_token");
       try {
-        const tracks = await fetchPlaylistTracks();
-        setMeditationTracks(tracks.items);
+        if (accessToken !== null) {
+          const tracks = await fetchPlaylistTracks();
+          setMeditationTracks(tracks.items);
+        }
       } catch (error) {
         console.error("Error Fetching Meditation Tracks", error);
       }

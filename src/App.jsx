@@ -18,7 +18,7 @@ function App() {
     const fetchUserData = async () => {
       const accessToken = localStorage.getItem("access_token");
       try {
-        if (accessToken) {
+        if (accessToken !== null) {
           const profile = await fetchProfile();
           setProfile(profile);
         }
