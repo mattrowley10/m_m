@@ -1,6 +1,6 @@
 const clientId = "30f051c5fe2146e5afeb4153911bdb99";
 const redirectUri =
-  "http://localhost:5173/home" ||
+  // "http://localhost:5173/home" ||
   "https://ornate-meerkat-7bb6c1.netlify.app/home";
 const url = "https://accounts.spotify.com/api/token";
 const scope =
@@ -80,16 +80,13 @@ export const getToken = async () => {
   }
 };
 
-const fetchToken = async () => {
-  if (code) {
-    try {
-      await getToken();
-    } catch (error) {
-      console.error("Error Fetching Token");
-    }
+if (code) {
+  try {
+    getToken();
+  } catch (error) {
+    console.error("Error Fetching Token");
   }
-};
-fetchToken();
+}
 
 export async function fetchProfile(token) {
   // const accessToken = localStorage.getItem("access_token");
