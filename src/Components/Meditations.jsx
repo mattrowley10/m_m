@@ -15,10 +15,8 @@ export default function Meditations() {
     async function loadMeditationTracks() {
       const accessToken = localStorage.getItem("access_token");
       try {
-        if (accessToken !== null) {
-          const tracks = await fetchPlaylistTracks();
-          setMeditationTracks(tracks.items);
-        }
+        const tracks = await fetchPlaylistTracks(accessToken);
+        setMeditationTracks(tracks.items);
       } catch (error) {
         console.error("Error Fetching Meditation Tracks", error);
       }

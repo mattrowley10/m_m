@@ -91,13 +91,13 @@ const fetchToken = async () => {
 };
 fetchToken();
 
-export async function fetchProfile() {
-  const accessToken = localStorage.getItem("access_token");
+export async function fetchProfile(token) {
+  // const accessToken = localStorage.getItem("access_token");
   try {
     const result = await fetch("https://api.spotify.com/v1/me", {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${accessToken}`,
+        Authorization: `Bearer ${token}`,
       },
     });
     const response = result.json();
@@ -108,15 +108,14 @@ export async function fetchProfile() {
   }
 }
 
-export async function fetchPlaylistTracks() {
-  const accessToken = localStorage.getItem("access_token");
+export async function fetchPlaylistTracks(token) {
   try {
     const result = await fetch(
       "https://api.spotify.com/v1/playlists/37i9dQZF1DWVS1recTqXhf/tracks",
       {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${accessToken}`,
+          Authorization: `Bearer ${token}`,
         },
       }
     );
