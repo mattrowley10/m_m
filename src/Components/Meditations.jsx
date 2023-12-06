@@ -83,6 +83,7 @@ export default function Meditations() {
         >
           <MdArrowBackIosNew />
         </button>
+        <p>1 2 3 4 5 6 7 8 9 10</p>
         <button
           onClick={nextPage}
           disabled={currentMeditation.length < meditationsPerPage}
