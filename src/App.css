@@ -293,6 +293,7 @@ app, html{
 .page-button{
     padding: 4px;
     margin-right: 10px;
+    margin-left: 10px;
     background-color: #385F71;
     color: #F5F0F6;
     font-family: "Quicksand";

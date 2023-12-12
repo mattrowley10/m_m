@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdArrowForwardIos } from "react-icons/md";
 import { MdArrowBackIosNew } from "react-icons/md";
+
 export default function Meditations() {
   const [meditationTracks, setMeditationTracks] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -46,6 +47,8 @@ export default function Meditations() {
     setCurrentPage((prevPage) => prevPage - 1);
   };
 
+  const arrOfPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
   return (
     <div className="meditations">
       <h2 className="meditations-header">Meditations</h2>
@@ -83,7 +86,7 @@ export default function Meditations() {
         >
           <MdArrowBackIosNew />
         </button>
-        <p>1 2 3 4 5 6 7 8 9 10</p>
+        <p>{arrOfPages}</p>
         <button
           onClick={nextPage}
           disabled={currentMeditation.length < meditationsPerPage}
