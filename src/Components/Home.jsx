@@ -1,9 +1,10 @@
 import Footer from "./Footer";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-
-export default function Home({ profile }) {
+import { fetchProfile } from "../API/script";
+export default function Home() {
   const [token, setToken] = useState("");
+  const [profile, setProfile] = useState({});
 
   useEffect(() => {
     async function fetchToken() {
@@ -15,6 +16,21 @@ export default function Home({ profile }) {
       }
     }
     fetchToken();
+  }, []);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const accessToken = localStorage.getItem("access_token");
+      try {
+        if (accessToken !== null) {
+          const profile = await fetchProfile(accessToken);
+          setProfile(profile);
+        }
+      } catch (error) {
+        console.error("Error displaying profile information");
+      }
+    };
+    fetchUserData();
   }, []);
 
   return (
