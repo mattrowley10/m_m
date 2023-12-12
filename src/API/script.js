@@ -89,7 +89,6 @@ if (code) {
 }
 
 export async function fetchProfile(token) {
-  // const accessToken = localStorage.getItem("access_token");
   try {
     const result = await fetch("https://api.spotify.com/v1/me", {
       method: "GET",

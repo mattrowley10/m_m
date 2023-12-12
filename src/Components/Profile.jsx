@@ -1,9 +1,27 @@
 import Footer from "./Footer";
 import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
+import { fetchProfile } from "../API/script";
 
-export default function Profile({ profile }) {
+export default function Profile() {
   const lastMed = JSON.parse(localStorage.getItem("lastMed"));
 
+  const [profile, setProfile] = useState({});
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const accessToken = localStorage.getItem("access_token");
+      try {
+        if (accessToken !== null) {
+          const profile = await fetchProfile(accessToken);
+          setProfile(profile);
+        }
+      } catch (error) {
+        console.error("Error displaying profile information");
+      }
+    };
+    fetchUserData();
+  }, []);
   return (
     <div className="profile">
       <h2 className="profile-header">Profile</h2>
