@@ -24,7 +24,7 @@ export default function Profile() {
   }, []);
   return (
     <div className="profile">
-      <h2 className="profile-header">Profile</h2>
+      <h2 className="profile-header text-3xl">Profile</h2>
       <div className="user-info">
         <ul className="user-info-list">
           <li>

@@ -8,7 +8,7 @@ import Meditations from "./Components/Meditations";
 import Profile from "./Components/Profile";
 import Community from "./Components/Community";
 import SingleMeditation from "./Components/SingleMeditation";
-
+import "../src/index.css";
 function App() {
   return (
     <Routes>

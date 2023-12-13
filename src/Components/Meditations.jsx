@@ -10,6 +10,7 @@ export default function Meditations() {
   const [meditationTracks, setMeditationTracks] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [meditationsPerPage] = useState(10);
+  const [clickedPage, setClickedPage] = useState(1);
   const nav = useNavigate();
 
   useEffect(() => {
@@ -47,11 +48,18 @@ export default function Meditations() {
     setCurrentPage((prevPage) => prevPage - 1);
   };
 
-  const arrOfPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  useEffect(() => {
+    setClickedPage(currentPage);
+  }, [currentPage]);
 
+  const navToPages = (pageNumber) => {
+    setCurrentPage(pageNumber);
+
+    nav(`/meditations?page=${pageNumber}`);
+  };
   return (
     <div className="meditations">
-      <h2 className="meditations-header">Meditations</h2>
+      <h2 className="meditations-header text-3xl">Meditations</h2>
       <div className="meditations-div-1">
         <div className="meditations-div-2">
           {currentMeditation.map((trackData, index) => {
@@ -78,22 +86,88 @@ export default function Meditations() {
           })}
         </div>
       </div>
-      <div className="page-buttons">
-        <button
-          onClick={prevPage}
-          disabled={currentPage === 1}
-          className="page-button"
-        >
-          <MdArrowBackIosNew />
-        </button>
-        <p>{arrOfPages}</p>
-        <button
-          onClick={nextPage}
-          disabled={currentMeditation.length < meditationsPerPage}
-          className="page-button"
-        >
-          <MdArrowForwardIos />
-        </button>
+      <div className="page-buttons my-12 flex justify-center">
+        <nav className="nav-med isolate inline-flex space-x-3 rounded-md shadow-md">
+          <button
+            onClick={prevPage}
+            disabled={currentPage === 1}
+            className="page-button"
+          >
+            <MdArrowBackIosNew />
+          </button>
+          <a
+            className={`pr-2 cursor-pointer text-2xl border-r-2   hover:opacity-100 ${
+              clickedPage === 1 ? "opacity-100" : "opacity-50"
+            }`}
+            onClick={() => navToPages(1)}
+          >
+            1
+          </a>
+          <a
+            className={`pr-2 cursor-pointer text-2xl border-r-2 hover:opacity-100 ${
+              clickedPage === 2 ? "opacity-100" : "opacity-50"
+            }`}
+            onClick={() => navToPages(2)}
+          >
+            2
+          </a>
+          <a
+            className={`pr-2 cursor-pointer text-2xl border-r-2 hover:opacity-100 ${
+              clickedPage === 3 ? "opacity-100" : "opacity-50"
+            }`}
+            onClick={() => navToPages(3)}
+          >
+            3
+          </a>
+          <a
+            className={`pr-2 cursor-pointer text-2xl border-r-2 hover:opacity-100 ${
+              clickedPage === 4 ? "opacity-100" : "opacity-50"
+            }`}
+            onClick={() => navToPages(4)}
+          >
+            4
+          </a>
+          <a
+            className={`pr-2 cursor-pointer text-2xl border-r-2 hover:opacity-100 ${
+              clickedPage === 5 ? "opacity-100" : "opacity-50"
+            }`}
+            onClick={() => navToPages(5)}
+          >
+            5
+          </a>
+          {/* <a className="pr-2 text-2xl border-r-2">...</a> */}
+          <a
+            className={`pr-2 cursor-pointer text-2xl border-r-2 hover:opacity-100 ${
+              clickedPage === 6 ? "opacity-100" : "opacity-50"
+            }`}
+            onClick={() => navToPages(6)}
+          >
+            6
+          </a>
+          <a
+            className={`pr-2 cursor-pointer text-2xl border-r-2 hover:opacity-100 ${
+              clickedPage === 7 ? "opacity-100" : "opacity-50"
+            }`}
+            onClick={() => navToPages(7)}
+          >
+            7
+          </a>
+          <a
+            className={`cursor-pointer text-2xl hover:opacity-100 ${
+              clickedPage === 8 ? "opacity-100" : "opacity-50"
+            }`}
+            onClick={() => navToPages(8)}
+          >
+            8
+          </a>
+          <button
+            onClick={nextPage}
+            disabled={currentMeditation.length < meditationsPerPage}
+            className="page-button"
+          >
+            <MdArrowForwardIos />
+          </button>
+        </nav>
       </div>
       <Footer />
     </div>

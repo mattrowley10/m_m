@@ -1,10 +1,9 @@
 import Footer from "./Footer";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { fetchProfile } from "../API/script";
+
 export default function Home() {
   const [token, setToken] = useState("");
-  const [profile, setProfile] = useState({});
 
   useEffect(() => {
     async function fetchToken() {
@@ -18,32 +17,14 @@ export default function Home() {
     fetchToken();
   }, []);
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      const accessToken = localStorage.getItem("access_token");
-      try {
-        if (accessToken !== null) {
-          const profile = await fetchProfile(accessToken);
-          setProfile(profile);
-        }
-      } catch (error) {
-        console.error("Error displaying profile information");
-      }
-    };
-    fetchUserData();
-  }, []);
-
+  console.log(token);
   return (
     <div className="home">
       <div className="home-h">
-        <h2 className="home-header">Mystic Meditation</h2>
+        <h2 className="home-header text-3xl">Mystic Meditation</h2>
       </div>
       <div className="welcome-home">
-        {token ? (
-          <div>Welcome, {profile.display_name}</div>
-        ) : (
-          <div>Welcome!</div>
-        )}
+        <div>Welcome to this Moment</div>
       </div>
       <div className="home-desc">
         <p className="home-description">
@@ -63,7 +44,7 @@ export default function Home() {
           awaits you here.
         </p>
       </div>
-      <Footer profile={profile} />
+      <Footer />
     </div>
   );
 }
