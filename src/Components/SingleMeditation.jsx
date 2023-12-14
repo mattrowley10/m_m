@@ -6,8 +6,14 @@ export default function SingleMeditation() {
   const location = useLocation();
   const meditation = location.state;
   const [token, setToken] = useState("");
+  const [finishedMeditations, setFinishedMeditations] = useState([]);
 
   const nav = useNavigate();
+
+  useEffect(() => {
+    const storedMeds = JSON.parse(localStorage.getItem("allMeds")) || [];
+    setFinishedMeditations(storedMeds);
+  }, []);
 
   useEffect(() => {
     async function getAccessToken() {
@@ -32,9 +38,21 @@ export default function SingleMeditation() {
       title: meditation.name,
       duration: formattedDuration,
     };
+    setFinishedMeditations((prevMeds) => [...prevMeds, finishedMed]);
+
+    localStorage.setItem(
+      "allMeds",
+      JSON.stringify([...finishedMeditations, finishedMed])
+    );
+
     localStorage.setItem("lastMed", JSON.stringify(finishedMed));
     nav("/meditations");
   };
+
+  //*create an array to store all previous meditations or store meditations in localStorage
+  //push objects to the array
+  //display array on profile page
+
   return (
     <div className="meditation">
       <h2 className="meditation-header">{meditation.name}</h2>

@@ -2,10 +2,11 @@ import Footer from "./Footer";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { fetchProfile } from "../API/script";
+import { useNavigate } from "react-router-dom";
 
 export default function Profile() {
   const lastMed = JSON.parse(localStorage.getItem("lastMed"));
-
+  const nav = useNavigate();
   const [profile, setProfile] = useState({});
 
   useEffect(() => {
@@ -56,6 +57,17 @@ export default function Profile() {
             <br></br>
             <li>
               <p>Click On the Meditations Tab to Explore New Meditations!</p>
+            </li>
+            <li>
+              <p>
+                See All Meditations{" "}
+                <a
+                  className="underline cursor-pointer"
+                  onClick={() => nav("/allmeditations")}
+                >
+                  Here
+                </a>
+              </p>
             </li>
           </ul>
         ) : (

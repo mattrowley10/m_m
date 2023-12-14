@@ -188,6 +188,21 @@ app, html{
     margin-bottom: 1rem;
     text-align: center;
 }
+.all-meditations{
+    font-family: 'Quicksand';
+}
+.allMeds{
+    list-style: none;
+    font-family: "Quicksand";
+
+}
+.meds{
+    background-color: #F8ECDC;
+    border: 5px solid #385F71;
+    padding: 3rem;
+    text-align: center;
+    opacity: .85;
+}
 .welcome-home{
     display: flex;
     justify-content: center;
