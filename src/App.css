@@ -201,6 +201,7 @@ app, html{
     text-align: center;
     opacity: .85;
     min-width: 40%;
+    max-width: 85%;
 }
 .welcome-home{
     display: flex;
@@ -243,7 +244,7 @@ app, html{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 8rem;
+    margin-top: 2rem;
 }
 .user-info-list{
     background-color: #F8ECDC;
@@ -278,12 +279,11 @@ app, html{
     list-style: none;
     margin: 1rem 1rem 0 1rem;
     text-align: center;
-    background-color: #ebe6df;
+    background-color: #F8ECDC;
     opacity: .85;
-    border: 2px solid #385F71;
+    border: 4px solid #385F71;
     padding: 1rem;
     cursor: pointer;
-    /* min-height: 90%; */
     height: 8rem;
 }
 .meditation-list:hover{
@@ -373,12 +373,23 @@ app, html{
     position: relative;
     opacity: .75;
 }
-@media (max-width: 915px){
-    .home-description{
-        margin: 0;
+@media (max-width: 1068px){
+    .meditation-list{
+        margin: 1rem;
+        height: 9rem;
     }
 }
-@media (max-width: 565px){
+@media (max-width: 768px){
+    .meditation-list{
+        margin: 1rem;
+        height: 9rem;
+    }
+    .home-description{
+        margin: 0;
+        padding: 2rem;
+    }
+}
+@media (max-width: 425px){
     .meditations-div-2{
         display: block;
     }
@@ -390,10 +401,21 @@ app, html{
     }
     .meditation-list{
         margin: 1rem;
+        height: 9rem;
     }
+    .home-description{
+        padding: 2rem;
+        margin:0;
+    }
+
 }
 @media (max-width: 320px){
     .home-description{
         padding: 2rem;
+        margin: 0;
+    }
+    .meditation-list{
+        margin: 1rem;
+        min-height: 11rem;
     }
 }

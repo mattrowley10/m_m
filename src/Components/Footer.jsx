@@ -20,6 +20,7 @@ export default function Footer() {
 
   const handleLogout = async () => {
     try {
+      localStorage.removeItem("access_token");
       nav("/");
     } catch (error) {
       console.error("Failed to logout", error);

@@ -18,6 +18,7 @@ export default function Home() {
   }, []);
 
   console.log(token);
+
   return (
     <div className="home">
       <div className="home-h">
