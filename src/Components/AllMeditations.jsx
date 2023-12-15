@@ -6,7 +6,7 @@ export default function AllMeditations() {
   return (
     <div className="all-meditations">
       <h2 className="text-3xl text-center mt-4">All Meditations</h2>
-      <div className="allMeds flex flex-col items-center justify-center relative top-24">
+      <div className="allMeds flex flex-col items-center justify-center relative mt-24">
         {allMeds.map((meds, index) => {
           return (
             <ul
