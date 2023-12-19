@@ -40,6 +40,13 @@ export default function Meditations() {
     indexOfLastMed
   );
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [currentPage]);
+
   const nextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
@@ -135,7 +142,6 @@ export default function Meditations() {
           >
             5
           </a>
-          {/* <a className="pr-2 text-2xl border-r-2">...</a> */}
           <a
             className={`pr-2 cursor-pointer text-2xl border-r-2 hover:opacity-100 ${
               clickedPage === 6 ? "opacity-100" : "opacity-50"

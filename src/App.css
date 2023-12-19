@@ -141,7 +141,8 @@ app, html{
 .home-desc{
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
 }
 .home-description{
     border: 5px solid #385F71;
@@ -153,7 +154,7 @@ app, html{
     word-spacing: 2px;
     line-height: 32px;
     margin: 0 10rem 0 10rem;
-    border-radius: 30%;
+    border-radius: 7%;
 }
 .home-description:hover{
     opacity: 1;
@@ -173,7 +174,7 @@ app, html{
     list-style: none;
     padding: 3rem;
     text-align: center;
-    border-radius: 30%;
+    border-radius: 7%;
 }
 .lastMedList:hover{
     opacity: 1;
@@ -199,7 +200,7 @@ app, html{
     opacity: .85;
     min-width: 40%;
     max-width: 85%;
-    border-radius: 30%;
+    border-radius: 7%;
 }
 .welcome-home{
     display: flex;
@@ -250,7 +251,7 @@ app, html{
     border: 5px solid #385F71;
     list-style: none;
     padding: 4rem;
-    border-radius: 30%;
+    border-radius: 7%;
     text-align: center;
 }
 .user-info-list:hover{
@@ -285,7 +286,7 @@ app, html{
     padding: 1rem;
     cursor: pointer;
     height: 9rem;
-    border-radius: 30%;
+    border-radius: 7%;
 
 }
 .meditation-list:hover{
