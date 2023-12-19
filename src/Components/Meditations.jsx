@@ -40,12 +40,12 @@ export default function Meditations() {
     indexOfLastMed
   );
 
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, [currentPage]);
+  // useEffect(() => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth",
+  //   });
+  // }, [currentPage]);
 
   const nextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
