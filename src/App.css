@@ -198,6 +198,7 @@ app, html{
     padding: 3rem;
     text-align: center;
     opacity: .85;
+    margin: 0 auto;
     min-width: 40%;
     max-width: 85%;
     border-radius: 7%;

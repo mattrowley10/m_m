@@ -9,6 +9,7 @@ import Profile from "./Components/Profile";
 import Community from "./Components/Community";
 import SingleMeditation from "./Components/SingleMeditation";
 import AllMeditations from "./Components/AllMeditations";
+import MeditationDetails from "./Components/MeditationDetails";
 import "../src/index.css";
 function App() {
   return (
@@ -18,9 +19,16 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/home" element={<Home />} />
       <Route path="/meditations" element={<Meditations />} />
-      <Route path="/single_meditation" element={<SingleMeditation />} />
+      <Route
+        path="/single_meditation/:meditationId"
+        element={<SingleMeditation />}
+      />
       <Route path="/profile" element={<Profile />} />
       <Route path="/allmeditations" element={<AllMeditations />} />
+      <Route
+        path="/meditation_details/:meditationId"
+        element={<MeditationDetails />}
+      />
       <Route path="/community" element={<Community />} />
     </Routes>
   );

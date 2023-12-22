@@ -1,6 +1,6 @@
 const clientId = "30f051c5fe2146e5afeb4153911bdb99";
 const redirectUri =
-  // "http://localhost:5173/home" || //only apply when working locally
+  "http://localhost:5173/home" || //only apply when working locally
   "https://ornate-meerkat-7bb6c1.netlify.app/home";
 const url = "https://accounts.spotify.com/api/token";
 const scope =
@@ -122,6 +122,23 @@ export async function fetchPlaylistTracks(token) {
     throw error;
   }
 }
+
+export async function fetchMeditationById(id, token) {
+  try {
+    const result = await fetch(`https://api.spotify.com/v1/tracks/${id}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const response = await result.json();
+    return response;
+  } catch (error) {
+    console.error("Error Fetching Meditation By Id", error);
+    throw error;
+  }
+}
+
 const refreshTokenThreshold = 3600;
 
 const getRefreshToken = async () => {

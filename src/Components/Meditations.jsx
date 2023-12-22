@@ -40,13 +40,6 @@ export default function Meditations() {
     indexOfLastMed
   );
 
-  // useEffect(() => {
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: "smooth",
-  //   });
-  // }, [currentPage]);
-
   const nextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
@@ -78,7 +71,9 @@ export default function Meditations() {
                 <ul
                   className="meditation-list"
                   onClick={() =>
-                    nav("/single_meditation", { state: trackData.track })
+                    nav("/single_meditation/:meditationId", {
+                      state: trackData.track,
+                    })
                   }
                 >
                   <li>{name}</li>

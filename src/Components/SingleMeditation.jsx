@@ -4,7 +4,7 @@ import SpotifyWebPlayer from "react-spotify-web-playback";
 
 export default function SingleMeditation() {
   const location = useLocation();
-  const meditation = location.state;
+  const meditation = location.state || {};
   const [token, setToken] = useState("");
   const [finishedMeditations, setFinishedMeditations] = useState([]);
 
@@ -36,7 +36,7 @@ export default function SingleMeditation() {
     const finishedMed = {
       date: new Date().toLocaleDateString(),
       title: meditation.name,
-      duration: formattedDuration,
+      id: meditation.id,
     };
     setFinishedMeditations((prevMeds) => [...prevMeds, finishedMed]);
 
@@ -48,10 +48,6 @@ export default function SingleMeditation() {
     localStorage.setItem("lastMed", JSON.stringify(finishedMed));
     nav("/meditations");
   };
-
-  //*create an array to store all previous meditations or store meditations in localStorage
-  //push objects to the array
-  //display array on profile page
 
   return (
     <div className="meditation">
