@@ -51,7 +51,7 @@ export default function SingleMeditation() {
 
   return (
     <div className="meditation">
-      <h2 className="meditation-header">{meditation.name}</h2>
+      <h2 className="meditation-header text-2xl">{meditation.name}</h2>
       <ul className="med-list">
         <li className="med-item">{formattedDuration}</li>
         <br></br>
