@@ -17,10 +17,8 @@ export default function Home() {
     fetchToken();
   }, []);
 
-  console.log(token);
-
   return (
-    <div className="home">
+    <div className="home" key={token}>
       <div className="home-h">
         <h2 className="home-header text-3xl">Mystic Meditation</h2>
       </div>

@@ -15,7 +15,7 @@ body{
     background-attachment:fixed;
     max-width: 100vw;
 }
-app, html{
+html{
     height: 100vh;
     image-rendering: optimizeQuality;
     overflow: hidden;
@@ -408,8 +408,9 @@ app, html{
         height: 11rem;
     }
     .home-description{
-        padding: 3rem;
+        padding: 2rem;
         margin:0;
+        margin-bottom: 2rem;
     }
     body{
         background-size: 829px 829px;

@@ -1,7 +1,7 @@
 import Footer from "./Footer";
 import { fetchPlaylistTracks } from "../API/script";
 import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdArrowForwardIos } from "react-icons/md";
 import { MdArrowBackIosNew } from "react-icons/md";
@@ -12,6 +12,13 @@ export default function Meditations() {
   const [meditationsPerPage] = useState(10);
   const [clickedPage, setClickedPage] = useState(1);
   const nav = useNavigate();
+  const topRef = useRef(null);
+
+  useEffect(() => {
+    if (topRef.current) {
+      topRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [currentPage]);
 
   useEffect(() => {
     async function loadMeditationTracks() {
@@ -58,7 +65,7 @@ export default function Meditations() {
     nav(`/meditations?page=${pageNumber}`);
   };
   return (
-    <div className="meditations">
+    <div className="meditations" ref={topRef}>
       <h2 className="meditations-header text-3xl">Meditations</h2>
       <div className="meditations-div-1">
         <div className="meditations-div-2">
