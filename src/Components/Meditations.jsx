@@ -66,7 +66,7 @@ export default function Meditations() {
   };
   return (
     <div className="meditations" ref={topRef}>
-      <h2 className="meditations-header text-3xl">Meditations</h2>
+      <h2 className="meditations-header text-4xl">Meditations</h2>
       <div className="meditations-div-1">
         <div className="meditations-div-2">
           {currentMeditation.map((trackData, index) => {

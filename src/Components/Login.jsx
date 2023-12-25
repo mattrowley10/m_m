@@ -8,7 +8,7 @@ export default function Login() {
 
   return (
     <div className="login">
-      <h2 className="login-header text-3xl">Login</h2>
+      <h2 className="login-header text-4xl">Login</h2>
 
       <form onSubmit={handleLogin} className="login-form">
         <div className="login-input">Login With Spotify</div>

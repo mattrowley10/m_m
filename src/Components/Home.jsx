@@ -20,9 +20,9 @@ export default function Home() {
   return (
     <div className="home" key={token}>
       <div className="home-h">
-        <h2 className="home-header text-3xl">Mystic Meditation</h2>
+        <h2 className="home-header text-4xl">Mystic Meditation</h2>
       </div>
-      <div className="welcome-home">
+      <div className="welcome-home text-1xl">
         <div>Welcome to this Moment</div>
       </div>
       <div className="home-desc">
