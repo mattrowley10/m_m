@@ -55,7 +55,7 @@ html{
     flex-direction: column;
     align-items: center;
     font-family: 'Fira Sans';
-    color:#000004;
+    color:#211819;
     height: 100vh;
 
 }
@@ -98,7 +98,7 @@ html{
     flex-direction: column;
     align-items: center;
     font-family: 'Quicksand';
-    color:#000004;
+    color:#211819;
     background-image: url("https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg");
     background-size: cover;
     background-position: center;
@@ -138,7 +138,7 @@ html{
 }
 .home-header{
     padding: 1rem;
-    color: #000004;
+    color: #211819;
     border-radius: 50%;
 }
 .home-desc{
@@ -152,7 +152,7 @@ html{
     border: 5px solid #385F71;
     background-color: #F8ECDC;
     opacity: .85;
-    color: #000004;
+    color: #211819;
     list-style: none;
     padding: 5rem;
     word-spacing: 2px;
@@ -168,17 +168,17 @@ html{
     display: flex;
     justify-content:center;
     margin-top: 1rem;
-    
 }
 .lastMedList{
     border: 5px solid #385F71;
     background-color: #F8ECDC;
     opacity: .85;
-    color: #000004;
+    color: #211819;
     list-style: none;
     padding: 3rem;
     text-align: center;
     border-radius: 7%;
+    font-family: 'Fira Sans';
 }
 .lastMedList:hover{
     opacity: 1;
@@ -190,6 +190,7 @@ html{
 }
 .all-meditations{
     font-family: 'Cormorant Garamond';
+    color: #211819;
 }
 .allMeds{
     list-style: none;
@@ -206,11 +207,12 @@ html{
     min-width: 30%;
     max-width: 85%;
     border-radius: 7%;
+    color: #211819;
 }
 .welcome-home{
     display: flex;
     justify-content: center;
-    color: #000004;
+    color: #211819;
     font-family: 'Cormorant Garamond';
     font-size: 20px;
 }
@@ -230,14 +232,14 @@ html{
     flex-direction: row;
     justify-content: space-around;
     list-style-type: none;
-    color: #000004;
+    color: #211819;
     padding-top: 5px;
 }
 .footer-item{
     cursor: pointer;
 }
 .profile{
-    color: #000004;
+    color: #211819;
     font-family: 'Fira Sans';
 }
 .profile-header{
@@ -264,7 +266,7 @@ html{
     opacity: 1;
 }
 .meditations{
-    color: #000004;
+    color: #211819;
     font-family: 'Fira Sans';
     
 }
@@ -272,6 +274,7 @@ html{
     text-align: center;
     margin-top: 1rem;
     font-family: 'Cormorant Garamond';
+    color: #211819;
 }
 .meditations-div-1{
     margin-top: 1rem;
@@ -294,6 +297,7 @@ html{
     cursor: pointer;
     height: 9rem;
     border-radius: 7%;
+    color: #211819;
 
 }
 .meditation-list:hover{
@@ -311,11 +315,10 @@ html{
 .page-buttons{
     display: flex;
     justify-content: center;
+    color: #211819;
 }
 .page-button{
     padding: 8px;
-    /* margin-right: 12px; */
-    /* margin-left: 12px; */
     background-color: #385F71;
     color: #F5F0F6;
     font-family: "Quicksand";
@@ -324,6 +327,7 @@ html{
     border-radius: 5px;
     box-shadow:2px 1px 1px 2px#011638;
     opacity: .8;
+    
 }
 .page-button:hover{
     opacity: 1;
@@ -388,7 +392,12 @@ html{
         margin-top: 5rem;
     }
 }
-@media (max-width: 1068px){
+@media(max-width: 1440px){
+    .meds{
+        min-width: 40%;
+    }
+}
+@media (max-width: 1024px){
     .meditation-list{
         margin: 1rem;
         height: 9rem;
@@ -413,6 +422,7 @@ html{
 @media (max-width: 425px){
     .meditations-div-2{
         display: block;
+        max-width: none;
     }
     .meditations-div-1{
         display: flex;
@@ -422,8 +432,9 @@ html{
     }
     .meditation-list{
         margin: 1rem;
-        height: 11rem;
+        height: 9rem;
     }
+
     .home-description{
         padding: 2rem;
         margin:0;
@@ -434,7 +445,7 @@ html{
         background-position: center right;
     }
     .meds{
-        min-width: 85%;
+        min-width: 90%;
     }
 }
 @media (max-width: 320px){

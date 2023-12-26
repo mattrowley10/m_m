@@ -29,7 +29,7 @@ export default function Profile() {
       <div className="user-info">
         <ul className="user-info-list">
           <li>
-            <h3 className="info">Your Information</h3>
+            <h3 className="info underline">Your Information</h3>
           </li>
           <br></br>
           <li>
@@ -44,8 +44,8 @@ export default function Profile() {
         {lastMed ? (
           <ul className="lastMedList">
             <li>
-              <h3 className="lastMedHeader">
-                <strong>Last Meditation</strong>
+              <h3 className="lastMedHeader underline">
+                <p>Last Meditation</p>
               </h3>
             </li>
             <li>
@@ -60,7 +60,7 @@ export default function Profile() {
             </li>
             <li>
               <p>
-                See All Meditations{" "}
+                See All Of Your Completed Meditations{" "}
                 <a
                   className="underline cursor-pointer"
                   onClick={() => nav("/allmeditations")}
