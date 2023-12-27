@@ -429,6 +429,9 @@ html{
     .meds{
         min-width: 70%;
     }
+    .meditations-div-2{
+        margin-bottom: 2rem;
+    }
 }
 
 @media (max-width: 425px){
