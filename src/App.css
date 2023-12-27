@@ -261,6 +261,7 @@ html{
     padding: 4rem;
     border-radius: 7%;
     text-align: center;
+    min-width: 26%;
 }
 .user-info-list:hover{
     opacity: 1;
