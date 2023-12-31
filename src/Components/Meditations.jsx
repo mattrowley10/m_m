@@ -95,7 +95,7 @@ export default function Meditations() {
           })}
         </div>
       </div>
-      <div className="page-buttons mb-16 flex justify-center">
+      <div className="page-buttons my-10  flex justify-center">
         <nav className="nav-med isolate inline-flex space-x-3 rounded-md shadow-md">
           <button
             onClick={prevPage}
