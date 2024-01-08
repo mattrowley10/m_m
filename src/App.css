@@ -55,13 +55,16 @@ html{
     flex-direction: column;
     align-items: center;
     font-family: 'Fira Sans';
-    color:#211819;
+    font-size: 20px;
+    font-weight: bolder;
+    color:#364156;
     height: 100vh;
 
 }
 .login-header{
     margin: 1rem 0;
-    font-family: 'Cormorant Garamond'
+    font-family: 'Cormorant Garamond';
+    color: #364156;
 }
 .login-form{
     display: flex;
@@ -134,11 +137,10 @@ html{
     display: flex;
     justify-content: center;
     font-family: 'Cormorant Garamond';
-    
 }
 .home-header{
     padding: 1rem;
-    color: #211819;
+    color: #2C2632;
     border-radius: 50%;
 }
 .home-desc{
@@ -146,18 +148,17 @@ html{
     justify-content: center;
     margin-top: 2rem;
     margin-bottom: 3rem;
-    
 }
 .home-description{
     border: 5px solid #385F71;
     background-color: #F8ECDC;
+    color: #2C2632;
     opacity: .85;
-    color: #211819;
     list-style: none;
     padding: 5rem;
     word-spacing: 2px;
     line-height: 32px;
-    margin: 0 10rem 0 10rem;
+    margin: 0 10rem 0rem 10rem;
     border-radius: 7%;
 }
 .home-description:hover{
@@ -173,7 +174,7 @@ html{
     border: 5px solid #385F71;
     background-color: #F8ECDC;
     opacity: .85;
-    color: #211819;
+    color: #2C2632;
     list-style: none;
     padding: 3rem;
     text-align: center;
@@ -190,7 +191,7 @@ html{
 }
 .all-meditations{
     font-family: 'Cormorant Garamond';
-    color: #211819;
+    color: #2C2632;
 }
 .allMeds{
     list-style: none;
@@ -207,14 +208,14 @@ html{
     min-width: 30%;
     max-width: 85%;
     border-radius: 7%;
-    color: #211819;
+    color: #2C2632;
 }
 .welcome-home{
     display: flex;
     justify-content: center;
-    color: #211819;
     font-family: 'Cormorant Garamond';
     font-size: 20px;
+    color: #2C2632;
 }
 .footer{
     position: fixed;
@@ -232,20 +233,21 @@ html{
     flex-direction: row;
     justify-content: space-around;
     list-style-type: none;
-    color: #211819;
+    color: #2C2632;
     padding-top: 5px;
 }
 .footer-item{
     cursor: pointer;
 }
 .profile{
-    color: #211819;
+    color: #2C2632;
     font-family: 'Fira Sans';
 }
 .profile-header{
     text-align: center;
     margin-top: 1rem;
-    font-family: 'Cormorant Garamond'
+    font-family: 'Cormorant Garamond';
+    color: #2C2632;
 }
 .user-info{
     display: flex;
@@ -262,12 +264,13 @@ html{
     border-radius: 7%;
     text-align: center;
     min-width: 26%;
+    color: #2C2632;
 }
 .user-info-list:hover{
     opacity: 1;
 }
 .meditations{
-    color: #211819;
+    color: #2C2632;
     font-family: 'Fira Sans';
     
 }
@@ -275,7 +278,7 @@ html{
     text-align: center;
     margin-top: 1rem;
     font-family: 'Cormorant Garamond';
-    color: #211819;
+    color: #2C2632;
 }
 .meditations-div-1{
     margin-top: 1rem;
@@ -298,7 +301,7 @@ html{
     cursor: pointer;
     height: 9rem;
     border-radius: 7%;
-    color: #211819;
+    color: #2C2632;
 
 }
 .meditation-list:hover{
@@ -312,11 +315,15 @@ html{
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    color: #2C2632;
+}
+.med-item{
+    color: #2C2632;
 }
 .page-buttons{
     display: flex;
     justify-content: center;
-    color: #211819;
+    color: #2C2632;
 }
 .page-button{
     padding: 8px;
@@ -453,7 +460,7 @@ html{
     .home-description{
         padding: 2rem;
         margin:0;
-        margin-bottom: 2rem;
+        margin-bottom: 5rem;
     }
     body{
         background-size: 829px 829px;

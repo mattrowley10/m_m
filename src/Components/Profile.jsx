@@ -54,11 +54,8 @@ export default function Profile() {
             <li>
               <p>{lastMed.title}</p>
             </li>
-            <br></br>
             <li>
-              <p>Click On the Meditations Tab to Explore New Meditations!</p>
-            </li>
-            <li>
+              <br></br>
               <p>
                 See All Of Your Completed Meditations{" "}
                 <a
